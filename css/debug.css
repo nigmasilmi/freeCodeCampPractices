@@ -1,15 +1,46 @@
+/*GOOGLE FONTS
+
+    font-family: 'Poppins', sans-serif;
+
+    font-family: 'Abril Fatface', cursive;
+
+    font-family: 'Acme', sans-serif;
+
+*/
+
+/*
+-----COLOR PALLETE-----
+Celestial blue: #3e92cc, rgba(62, 146, 204, 1)
+Lapis lazuli: #2a628f, rgba(42, 98, 143, 1)
+Dark slate gray: #2f4858, rgba(47, 72, 88, 1)
+Saffron : #f6ae2d, rgba(246, 174, 45, 1)
+Giants Orange: #f26419,  rgba(242, 100, 25, 1)
+
+
+*/
+
 body{
-  background-color: pink;
-  font-family: monospace;
-  color: grey;
+  background-color:#2f4858;
+  font-family: 'Acme', sans-serif;
+  color: #f6ae2d;
   font-size: 2em;
 }
 
 #button{
-  width: 100%;
-  height: 30%;
-  color : green;
+  text-align: center;
+  color : white;
   margin-top: 30%;
+  background-color:rgba(62, 146, 204, 1);
   margin-bottom: 3%;
-  padding: 5%;
+  padding: 2%;
+}
+
+input{
+  font-family: 'Poppins', sans-serif;
+}
+
+.flex{
+  display: flex;
+  justify-content: flex-end;
+
 }
