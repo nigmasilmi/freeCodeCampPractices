@@ -207,25 +207,87 @@ let theTruthIs = bouncer([false, null, 0, NaN, undefined, ""]);
 function getIndexToIns(arr, num) {
     // sort the array
     let sortedArr = arr.sort((a, b) => { return a - b; });
-    console.log('sortedArr', sortedArr);
     // contrast the second argument with each element in the sorted array
     // if it is greater than the element, continue, if it is smaller, insert before it
-    let rightIndex = 0;
     let theIndex = 0;
 
     for (let i = 0; i < sortedArr.length; i++) {
         if (num > sortedArr[i]) {
-            continue;
-        } else if (num == sortedArr[i]) {
+            if (num > sortedArr[sortedArr.length - 1]) {
+                theIndex = sortedArr.length;
+                return theIndex;
+            } else {
+                continue;
+
+            }
+        } else if (num <= sortedArr[i]) {
             theIndex = i;
+            return theIndex;
+
+        } else if (num > sortedArr[sortedArr.length - 1]) {
+
         }
     }
-    if (num < arr[rightIndex - 1] && num < arr[rightIndex]) {
-        theIndex = rightIndex;
-    }
+
     num = theIndex;
     return num;
 }
 
-let getIt = getIndexToIns([40, 60], 50);
-console.log('getIt: ', getIt);
+let getIt = getIndexToIns([], 1);
+
+
+// Basic Algorithm Scripting: Mutations
+
+// Return true if the string in the first element of the array contains all of the letters of the string in the second element of the array.
+
+// For example, ["hello", "Hello"], should return true because all of the letters in the second string are present in the first, ignoring case.
+
+// The arguments["hello", "hey"] should return false because the string "hello" does not contain a "y".
+
+// Lastly, ["Alien", "line"], should return true because all of the letters in "line" are present in "Alien".
+
+function mutation(arr) {
+    // separate the array in its elements
+    let el1arr = arr[0].toLowerCase().split('').sort();
+    let elar1Unique = uniqueLetters(el1arr);
+    let el2arr = arr[1].toLowerCase().split('').sort();
+    let elar2Unique = uniqueLetters(el2arr);
+    // create array with unique letters
+
+    function uniqueLetters(arr) {
+        let dict = {};
+        let arrUnique = [];
+        for (let i = 0; i < arr.length; i++) {
+            if (dict[arr[i]]) {
+                dict[arr[i]]++;
+            } else {
+                dict[arr[i]] = 1;
+
+            }
+        }
+
+        for (let letter in dict) {
+            arrUnique.push(letter);
+        }
+
+        return arrUnique;
+    }
+
+    let matchesCount = [];
+    for (let i = 0; i < elar2Unique.length; i++) {
+        for (let j = 0; j < elar1Unique.length; j++) {
+            if (elar2Unique[i] == elar1Unique[j]) {
+                matchesCount.push(1);
+            }
+        }
+    }
+
+    if (matchesCount.length == elar2Unique.length) {
+        return true;
+    } else {
+        return false;
+    }
+
+}
+
+let mutationRes = mutation(["voodoo", "no"]);
