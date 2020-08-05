@@ -291,3 +291,37 @@ function mutation(arr) {
 }
 
 let mutationRes = mutation(["voodoo", "no"]);
+
+
+
+// Basic Algorithm Scripting: Chunky Monkey
+
+// Write a function that splits an array(first argument) into groups the length of size(second argument) and returns them as a two - dimensional array.
+
+function chunkArrayInGroups(arr, size) {
+    let arrTochunck = [];
+    arr.forEach(el => arrTochunck.push(el));
+    console.log(arrTochunck);
+
+    let rows = Math.ceil(arr.length / size);
+    let matrix = [];
+    let initial = 0;
+    let end = 0;
+
+    for (let i = 0; i < rows; i++) {
+        if (i === 0) {
+            matrix[i] = arrTochunck.slice(initial, size);
+
+        } else {
+            initial = i * size;
+            end = size * (i + 1);
+            matrix[i] = arrTochunck.slice(initial, end);
+
+        }
+
+    }
+    arr = matrix;
+    return arr;
+}
+
+let chunkyMonkey = chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6], 3); 
