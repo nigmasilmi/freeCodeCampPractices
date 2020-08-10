@@ -12,19 +12,19 @@ de las condiciones que dictaba la callback function*/
 toma una función callback como argumento y esta a su vez recibe 4 parámetros de los que 2 son requeridos,
  valorActual y total*/
 
-let hO = function(){
-  let arrayToMap = [2,3,4,5,6];
-  const mapResult = arrayToMap.map(x=>x + 2);
-  document.getElementById('mapResult').innerHTML= mapResult;
-//document.getElementById('mapResult').innerHTML= 'cualquier cosa';
+let hO = function () {
+  let arrayToMap = [2, 3, 4, 5, 6];
+  const mapResult = arrayToMap.map(x => x + 2);
+  document.getElementById('mapResult').innerHTML = mapResult;
+  //document.getElementById('mapResult').innerHTML= 'cualquier cosa';
 
   let arrayToFilter = [43, 45, 46, 77, 74, 88, 98];
-  const filtResult = arrayToFilter.filter(i=> i > 50);
-  document.getElementById('filtResult').innerHTML= filtResult;
+  const filtResult = arrayToFilter.filter(i => i > 50);
+  document.getElementById('filtResult').innerHTML = filtResult;
 
   let arrayToReduce = [43, 45, 46, 77, 74, 88, 98];
-  const reducedResult = arrayToReduce.reduce((acumulador, valorActual)=>acumulador+valorActual);
-  document.getElementById('redult').innerHTML= reducedResult;
+  const reducedResult = arrayToReduce.reduce((acumulador, valorActual) => acumulador + valorActual);
+  document.getElementById('redult').innerHTML = reducedResult;
 
 };
 
@@ -34,8 +34,8 @@ const squareList = (arr) => {
   "use strict";
   // change code below this line
   let squaredIntegers = arr;
-  let passedValues = arr.filter(i=> Number.isInteger(i) && i>0);
-  squaredIntegers = passedValues.map(i => i*i)
+  let passedValues = arr.filter(i => Number.isInteger(i) && i > 0);
+  squaredIntegers = passedValues.map(i => i * i)
   console.log('passedValues array ' + passedValues);
   // change code above this line
   return squaredIntegers;

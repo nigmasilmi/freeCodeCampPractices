@@ -69,4 +69,4 @@ function rangeOfNumbers(startNum, endNum) {
 }
 
 let bubbling = rangeOfNumbers(4);
-console.log(bubbling);
+// console.log(bubbling);
