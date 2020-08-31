@@ -1,13 +1,6 @@
 
 // Basic JavaScript: Replace Loops using Recursion
 
-function sum(arr, n) {
-    // Only change code below this line
-
-
-    // Only change code above this line
-}
-
 function multiply(arr, n) {
     // condición base
     if (n <= 0) {
